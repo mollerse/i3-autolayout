@@ -237,7 +237,7 @@ pub fn is_floating_container(node: &I3Node) -> bool {
 
 /// Check the ratio of a node.
 pub fn ratio_of_node(node: &I3Node) -> RectRatio {
-    if node.window_rect.height > node.window_rect.width {
+    if (node.window_rect.height as f32) * 1.3 > (node.window_rect.width as f32) {
         RectRatio::Vertical
     } else {
         RectRatio::Horizontal
